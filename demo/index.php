@@ -5,27 +5,40 @@
     <title>Recommended Books</title>
 </head>
 <style>
-    body {
-        display: grid;
-        place-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: sans-serif;
-    }
 </style>
 <body>
 
     <?php
         $books = [
-            "Book 1",
-            "Book 2",
-            "Book 3"
+            [
+                "name" => "Book 1",
+                "author" => "James",
+                "url" => "http://example.com",
+                "year" => "2000"
+            ],
+            [
+                "name" => "Book 2",
+                "author" => "Sherlock",
+                "url" => "http://example.com",
+                "year" => "2001" 
+            ],
+            [
+                "name" =>"Book 3",
+                "auhor" => "John",
+                "url" => "http://example.com",
+                "year" => "2003"
+            ]
         ];
     ?>
 
 <ul>
-    <?php foreach ($books as $book): ?>
-        <li><?= $book ?></li>
+     <?php foreach ($books as $book): ?>
+        <li>
+            <a href="<?= $book['url'] ?>">
+            <?= $book['name'] ?> 
+            </a>
+            <?= $book['year'] ?>  
+        </li>
     <?php endforeach; ?>
 </ul>
 
