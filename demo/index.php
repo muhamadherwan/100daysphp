@@ -14,41 +14,50 @@
                 "name" => "Book 1",
                 "author" => "James",
                 "url" => "http://example.com",
-                "year" => "2000"
+                "year" => 2000
             ],
             [
                 "name" => "Book 2",
                 "author" => "Sherlock",
                 "url" => "http://example.com",
-                "year" => "2001" 
+                "year" => 2001
             ],
             [
                 "name" =>"Book 3",
-                "auhor" => "John",
+                "author" => "John",
                 "url" => "http://example.com",
-                "year" => "2003"
+                "year" => 2003
             ],
             [
                 "name" =>"Book 4",
                 "author" => "James",
                 "url" => "http://example.com",
-                "year" => "2003"
-            ]
+                "year" => 2003
+            ],
+            [
+                'name' => 'Do Androids Dream of Electric Sheep',
+                'author' => 'Philip K. Dick',
+                'releaseYear' => 1968,
+                'purchaseUrl' => 'http://example.com'
+            ],
+            [
+                'name' => 'Project Hail Mary',
+                'author' => 'Andy Weir',
+                'releaseYear' => 2021,
+                'purchaseUrl' => 'http://example.com'
+            ],
+            [
+                'name' => 'The Martian',
+                'author' => 'Andy Weir',
+                'releaseYear' => 2011,
+                'purchaseUrl' => 'http://example.com'
+            ],
         ];
 
-        $filterByAuthor = function ($books, $author) {
-            $filteredBooks = [];
+        $filteredBooks = array_filter($books, function ($book) {
+            return $book['releaseYear'] >= 1950 && $book['releaseYear'] <= 2020;
+        });
 
-            foreach ($books as $book ) {
-                if ($book['author'] === $author) {
-                    $filteredBooks[] = $book;
-                }
-            }
-
-            return $filteredBooks;
-        };
-
-        $filteredBooks = $filterByAuthor($books, 'James');
     ?>
 
 <ul>
