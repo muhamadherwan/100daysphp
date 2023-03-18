@@ -2,7 +2,7 @@
 <html lang="">
 <head>
     <meta charset="UTF-8">
-    <title>Demo</title>
+    <title>Recommended Books</title>
 </head>
 <style>
     body {
@@ -16,18 +16,18 @@
 <body>
 
     <?php
-        $name = "Dark Matter";
-        $read = false;
-
-        if ($read) {
-            $message = "You have read $name";
-        } else {
-            $message = "You have NOT read $name";
-        }
+        $books = [
+            "Book 1",
+            "Book 2",
+            "Book 3"
+        ];
     ?>
 
-<h1>
-    <?= $message ?>
-</h1>
+<ul>
+    <?php foreach ($books as $book): ?>
+        <li><?= $book ?></li>
+    <?php endforeach; ?>
+</ul>
+
 </body>
 </html>
