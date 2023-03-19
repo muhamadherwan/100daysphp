@@ -15,7 +15,7 @@
                 <?= $book['name'] ?>
             </a>
             <?= $book['year'] ?>
-            by <?= $book['author'] ?>  
+            by <?= $book['author'] ?>
         </li>
     <?php endforeach; ?>
 </ul>
